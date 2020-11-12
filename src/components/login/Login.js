@@ -155,7 +155,7 @@ const Login = () => {
                   <Input
                     className={ styles.label }
                     onChange={ updateUsername }
-                    placeholder="username"
+                    placeholder={ pageType === 'signUp' ? 'username' : 'username or email' }
                     required
                     value={ username || '' }
                     variant="large"
