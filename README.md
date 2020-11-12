@@ -24,8 +24,8 @@ yarn install
 <br>
 
 ## ⚙️ Config
-The login page is located in `./src/components/login/Login.js`, if you care to make edits, but probably don't need to. Once the user is logged in, they will be redirected to `./src/components/account/Account.js`, you can plug in your account page here, configure Firebase, and call it a day.<br>
-
+The login page is located in `./src/components/login/Login.js`, if you care to make edits, but probably don't need to. Once the user is logged in, they will be redirected to `./src/components/account/Account.js`, you can plug in your account page here, configure Firebase, and call it a day.
+<br><br>
 
 ## 🔥 Firebase
 Firebase is configured and connected via Python/Flask using [Pyrebase](https://github.com/thisbejim/Pyrebase). You'll need to create and add a `./resources/firebase_config.js` file which contains your Firebase configuration and should be structured as so, and include the data from your Firebase project. The information you add to this file should not be shared, and so the file is excluded in the project's `.gitignore`, allowing the file to act as environment variables:
@@ -47,7 +47,7 @@ config = {
 
 ## ⚗️ Flask
 The Flask server is located in `./app.py`. It comes with CORS enabled, as well as all login, sign up, and password reset routes, all preconfigured. For information on using Flask, see the [Flask documentation](https://flask.palletsprojects.com/).
-
+<br><br>
 
 ## 🦟 Software bugs
 Bugs reported on the project's [issues page](https://github.com/iPzard/mkvtoolnix-batch-tool/issues) will be exterminated as quickly as possible, be sure to include steps to reproduce so they can be spotted easily.
