@@ -55,7 +55,7 @@ Bugs reported on the project's [issues page](https://github.com/iPzard/mkvtoolni
 
 ## 🙏 Attribution
 - SVG icons used are from [Font Awesome](https://fontawesome.com)
-<br>
+
 
 ## 🏷️ License
 
