@@ -43,7 +43,7 @@ config = {
 }
 ```
 
-You will also need to enable [Firebase Authentication](https://firebase.google.com/docs/auth) and [Firebase Realtime Database](https://firebase.google.com/docs/database) in your project, if you haven't already. You will also need to [set the read/write permissions](https://firebase.google.com/docs/database/security/get-started#access_your_rules). This is used to create, store, and delete usernames. 
+You will also need to enable [Firebase Authentication](https://firebase.google.com/docs/auth) and [Firebase Realtime Database](https://firebase.google.com/docs/database) in your project, if you haven't already, as well as [set the read/write permissions](https://firebase.google.com/docs/database/security/get-started#access_your_rules). This is used to create, store, and delete usernames. 
 <br><br>
 
 
