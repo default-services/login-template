@@ -42,7 +42,9 @@ config = {
   "measurementId": "YOUR-DATA-FROM-FIREBASE",
 }
 ```
-<br>
+
+You will also need to enable [Firebase Realtime Database](https://firebase.google.com/docs/database) in your project, if you haven't already, and set the read/write permissions to `true`. This is used to create, store, and delete usernames. 
+<br><br>
 
 
 ## ⚗️ Flask
