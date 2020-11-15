@@ -11,9 +11,10 @@
       "last 1 safari version"
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "@default-services/components": "^2.0.2"
+  },
   "devDependencies": {
-    "@default-services/components": "^2.0.0",
     "@reduxjs/toolkit": "^1.1.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.13.0",

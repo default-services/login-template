@@ -1,12 +1,28 @@
-import { Button } from '@default-services/components';
+import { Navbar } from '@default-services/components';
 import React from 'react';
 import { userLogOut } from 'utilities/requests';
 
 const Account = () => {
+  const links = [
+    {
+      li: { key: 'log_out' },
+      a: {
+        href: '#',
+        onClick: userLogOut,
+        title: 'Log out'
+      },
+      text: 'Log out'
+    }
+  ];
   return (
     <div>
-      <h1>Hello!</h1>
-      <Button onClick={ userLogOut }>Log out</Button>
+      <Navbar
+        links={ links }
+        // logo={ defaultLogo }
+        // logoTitle='Default Services'
+        // logoLink='https://default.services'
+        variant="navbar-right-underline alt-icons arrow-close"
+      />
     </div>
   );
 };

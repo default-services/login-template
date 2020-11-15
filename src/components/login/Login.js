@@ -23,6 +23,9 @@ const Login = () => {
   } = useSelector(selectLogin);
   const { currentPage } = useSelector(selectApp);
 
+  const submitInput = useRef(null);
+  const loginSignUpButton = useRef(null);
+
   const [showNotice, setShowNotice] = useState(false);
   const [notice, setNotice] = useState({ header: '', message: '' });
   const [showLoader, setShowLoader] = useState(false);
@@ -56,6 +59,8 @@ const Login = () => {
 
   const toggleLoginSignup = () => {
     const newPageType = pageType === 'login' ? 'signUp' : 'login';
+
+    loginSignUpButton.current?.blur(); // Don't focus on the new option
     dispatch(setLoginSliceState(['pageType', newPageType]));
   };
 
@@ -84,7 +89,6 @@ const Login = () => {
   };
 
   const { currentPageText, newPageText } = pageConfig(pageType);
-  const submitInput = useRef(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -130,7 +134,7 @@ const Login = () => {
 
 
   return (
-    <Fragment>
+    <main className={ styles.main }>
       <form onSubmit={ handleSubmit }>
         <Container className={ styles.container }>
           <Icon pageType={ pageType } />
@@ -206,7 +210,7 @@ const Login = () => {
               Forgot password?
             </a>
 
-            <a href="#submit" onClick={ toggleLoginSignup }>
+            <a href="#submit" onClick={ toggleLoginSignup } ref={ loginSignUpButton }>
               {`${newPageText}?`}
             </a>
           </div>
@@ -226,7 +230,7 @@ const Login = () => {
         {notice.message}
       </Notice>
       <Loader show={ showLoader || false } />
-    </Fragment>
+    </main>
   );
 };
 

@@ -28,9 +28,7 @@ const App = () => {
 
 
   return (
-    <main>
-      <Page currentPage={ currentPage } />
-    </main>
+    <Page currentPage={ currentPage } />
   );
 };
 
