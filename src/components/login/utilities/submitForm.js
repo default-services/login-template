@@ -60,13 +60,13 @@ const loginSuccessCallback = (data, setNotice) => {
         responseMessage = 'Unable to log in with the information supplied.';
     }
 
-    setNotice({
+    return setNotice({
       header: 'Login failed',
       message: responseMessage
     });
   }
 
-  else return data;
+  return data;
 };
 
 
@@ -78,7 +78,7 @@ const passwordResetSuccessCallback = (data, setNotice) => {
 
   // Determine message based on error provided from Firebase
   if (data.error) {
-    console.log('error!');
+
     // Update response header
     responseHeader = parseErrorMessage(data.error);
 

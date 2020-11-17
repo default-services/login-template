@@ -1,5 +1,5 @@
 import pyrebase, json
-from .firebase_config import config
+from resources.firebase.config import config
 
 
 """ Firebase wrapper class
@@ -7,7 +7,7 @@ Sends request to firebase and returns `response`:
 on success: { code: 200, data: {dict}, error: None }
 on failure: { code: 400, data: None, error: str(error_message) }
 """
-class Firebase:
+class Auth:
   def __init__(self):
     self.firebase = pyrebase.initialize_app(config)
     self.auth = self.firebase.auth()

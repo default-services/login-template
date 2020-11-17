@@ -1,9 +1,9 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
-from resources import firebase
+from resources.firebase import auth
 
-# Instantiating Firebase
-Firebase = firebase.Firebase()
+# Instantiating Auth
+Auth = auth.Auth()
 
 # Instantiating Flask and CORS
 app = Flask(__name__)
@@ -26,7 +26,7 @@ def sign_up():
   email = request.json["email"] or None
   password = request.json["password"]
   username = request.json["username"] or None
-  response = Firebase.create_account(email, password, username)
+  response = Auth.create_account(email, password, username)
 
   return jsonify(response)
 
@@ -35,7 +35,7 @@ def sign_up():
 @app.route("/is_logged_in", methods=["POST"])
 def is_log_in():
   id_token = request.json["idToken"]
-  response = Firebase.is_logged_in(id_token)
+  response = Auth.is_logged_in(id_token)
 
   return jsonify(response)
 
@@ -46,7 +46,7 @@ def log_in():
   email = request.json["email"]
   password = request.json["password"]
   username = request.json["username"]
-  response = Firebase.log_in(email, password, username)
+  response = Auth.log_in(email, password, username)
 
   return jsonify(response)
 
@@ -55,7 +55,7 @@ def log_in():
 @app.route("/reset_password", methods=["POST"])
 def reset_password():
   email = request.json["email"]
-  response = Firebase.reset_password(email)
+  response = Auth.reset_password(email)
 
   return jsonify(response)
 

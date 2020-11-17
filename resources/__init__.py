@@ -1,1 +1,1 @@
-from . import firebase, firebase_config
+from resources.firebase import auth, config
