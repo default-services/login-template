@@ -60,5 +60,4 @@ Bugs reported on the project's [issues page](https://github.com/iPzard/mkvtoolni
 <br>
 
 ## 🏷️ License
-
 MIT © [iPzard](https://github.com/default-services/login-template/blob/main/LICENSE)
