@@ -1,4 +1,5 @@
 import persistentStorage from 'utilities/persistentStorage';
+import firebase from 'utilities/firebase';
 
 /**
  * @namespace Requests
@@ -99,23 +100,15 @@ export const userLogOut = () => {
 };
 
 /**
- * @description - Function check if the Firebase idToken has expired.
- * @param {string} idToken - Firebase idToken which expires after 1hr.
- * @param  {...function} args - `callback` and `errorCallback` functions.
- */
-export const checkLoginStatus = (idToken, ...args) => {
-  parseRequest({ idToken }, 'is_logged_in', ...args);
-};
-
-/**
  * @description - Function create an account in Firebase.
  * @param {string} email - User email address to associate with account.
  * @param {string} password - User password to log into their account.
  * @param {string} username - Username to associate with account.
  * @param  {...function} args - `callback` and `errorCallback` functions.
  */
-export const createAccount = (email, password, username, ...args) => {
-  parseRequest({ email, password, username }, 'create_account', ...args);
+export const createAccount = async (email, password, username, ...args) => {
+  const token = await firebase.getToken();
+  parseRequest({ email, password, token, username }, 'create_account', ...args);
 };
 
 /**
@@ -125,4 +118,13 @@ export const createAccount = (email, password, username, ...args) => {
  */
 export const passwordReset = (email, ...args) => {
   parseRequest({ email }, 'reset_password', ...args);
+};
+
+/**
+ * @description - Send a push notifications to user's device.
+ * @param {string} username - Username to use get device token for.
+ * @param  {...function} args - `callback` and `errorCallback` functions.
+ */
+export const sendPushNotification = (username, title, message, ...args) => {
+  parseRequest({ username, title, message }, 'send_push_notification', ...args);
 };

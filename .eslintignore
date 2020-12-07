@@ -5,3 +5,4 @@ stories/
 .snapshots/
 *.min.js
 serviceWorker.js
+firebase-messaging-sw.js

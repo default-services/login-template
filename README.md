@@ -28,10 +28,10 @@ The login page is located in `./src/components/login/Login.js`, if you care to m
 <br><br>
 
 ## 🔥 Firebase
-Firebase is configured and connected via Python/Flask using [Pyrebase](https://github.com/thisbejim/Pyrebase). You'll need to create and add a `./resources/firebase/config.py` file which contains your Firebase configuration and should be structured as so, and include the data from your Firebase project. The information you add to this file should not be shared, and so the file is excluded in the project's `.gitignore`, allowing the file to act as environment variables:
+Firebase is authentication is configured via Python/Flask using [Pyrebase](https://github.com/thisbejim/Pyrebase). You'll need to create and add a `./resources/firebase/config.py` file which contains your Firebase configuration and should include the following snippet, though including the data from your Firebase project. The information you add to this file should not be shared, and so the file is excluded in the project's `.gitignore`, allowing the file to act as environment variables:
 
 ```python
-config = {
+auth_config = {
   "apiKey": "YOUR-DATA-FROM-FIREBASE",
   "authDomain": "YOUR-DATA-FROM-FIREBASE",
   "databaseURL": "YOUR-DATA-FROM-FIREBASE",

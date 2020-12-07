@@ -9,6 +9,7 @@ import pageConfig from 'components/login/utilities/pageConfig';
 import persistentStorage from 'utilities/persistentStorage';
 import styles from 'components/login/assets/styles/Login.module.scss';
 import submitForm from 'components/login/utilities/submitForm';
+import { sendPushNotification } from 'utilities/requests';
 
 const Login = () => {
 
@@ -33,6 +34,17 @@ const Login = () => {
   useEffect(() => {
     const rememberUser = persistentStorage.getLocalValue('rememberUser');
     const usernameData = persistentStorage.getLocalValue('username');
+
+    // Example push notification
+    setTimeout(() => {
+      sendPushNotification(
+        'daniel', // username
+        'test title!',
+        'testing message',
+        (response) => console.log(response),
+        (error) => console.error(error)
+      );
+    }, 3000);
 
     if (rememberUser) {
       if (usernameData) {

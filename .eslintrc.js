@@ -91,6 +91,9 @@ module.exports = {
     // Disallow multiple empty lines
     'no-multiple-empty-lines': [0],
 
+    // Allow self keyword in service worker files
+    'no-restricted-globals': [0],
+
     // Don't enforce "restricted" syntax
     'no-restricted-syntax': [0],
 

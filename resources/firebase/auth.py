@@ -1,5 +1,5 @@
 import pyrebase, json
-from resources.firebase.config import config
+from resources.firebase.config import auth_config
 
 
 """ Firebase wrapper class
@@ -9,7 +9,7 @@ on failure: { code: 400, data: None, error: str(error_message) }
 """
 class Auth:
   def __init__(self):
-    self.firebase = pyrebase.initialize_app(config)
+    self.firebase = pyrebase.initialize_app(auth_config)
     self.auth = self.firebase.auth()
     self.database = self.firebase.database().child("users")
 
@@ -29,7 +29,7 @@ class Auth:
     return response
 
   # Function to create an account in Firebase
-  def create_account(self, email, password, username):
+  def create_account(self, email, password, token, username):
     database_username = self.database.child(username).get().val()
 
     # If username doesn't already exist
@@ -41,8 +41,12 @@ class Auth:
 
       # If email doesn't already exist
       if user is not None:
-        self.database.child(username).set(user["email"])
+        self.database.child(username).child("email").set(user["email"])
         self.auth.send_email_verification(user["idToken"])
+
+        # If notifications approved and device token provided
+        if token is not None:
+          self.database.child(username).child("token").set(token)
 
     # If username does already exist
     else:
@@ -50,17 +54,18 @@ class Auth:
 
     return response
 
-  # Function to check if user is logged into Firebase
-  def is_logged_in(self, id_token):
-    response = self.authenticate("get_account_info", id_token)
+  # Function to get device token using username
+  def get_device_token(self, username):
+    self.database.child(username).get().val()  # Initialize, TODO: why is this needed?
+    device_token = self.database.child(username).child("token").get().val()
 
-    return response
+    return device_token
 
   # Function to log in using Firebase
   def log_in(self, email, password, username):
 
     # If username is used, get associated email from database
-    user_email = email or self.database.child(username).get().val()
+    user_email = email or self.database.child(username).child("email").get().val()
     response = self.authenticate(
       "sign_in_with_email_and_password", user_email, password
     )

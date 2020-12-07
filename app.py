@@ -1,9 +1,11 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
-from resources.firebase import auth
+from resources.firebase import auth, messaging
+import requests
 
-# Instantiating Auth
+# Instantiating Services
 Auth = auth.Auth()
+Messaging = messaging.Messaging()
 
 # Instantiating Flask and CORS
 app = Flask(__name__)
@@ -25,22 +27,17 @@ app.config["CORS_HEADERS"] = "Content-Type"
 def sign_up():
   email = request.json["email"] or None
   password = request.json["password"]
+  token = request.json["token"] or None
   username = request.json["username"] or None
-  response = Auth.create_account(email, password, username)
+  response = Auth.create_account(email, password, token, username)
 
-  return jsonify(response)
-
-
-# Route for checking login status
-@app.route("/is_logged_in", methods=["POST"])
-def is_log_in():
-  id_token = request.json["idToken"]
-  response = Auth.is_logged_in(id_token)
-
+  # usage
+  # Messaging.push_notification(token, "test", "testing message", None)
   return jsonify(response)
 
 
 # Route for logging in
+# TODO: refresh/add device token on login
 @app.route("/log_in", methods=["POST"])
 def log_in():
   email = request.json["email"]
@@ -56,6 +53,21 @@ def log_in():
 def reset_password():
   email = request.json["email"]
   response = Auth.reset_password(email)
+
+  return jsonify(response)
+
+
+# Route to send notifications
+@app.route("/send_push_notification", methods=["POST"])
+def send_notification():
+  username = request.json["username"]
+  title = request.json["title"]
+  message = request.json["message"]
+
+  # Username is used to retreive saved device token
+  token = Auth.get_device_token(username)
+
+  response = Messaging.push_notification(token, title, message, None)
 
   return jsonify(response)
 
