@@ -24,9 +24,7 @@ yarn install
 <br>
 
 ## ⚙️ Config
-The login page is located in `./src/components/login/Login.js`, if you care to make edits, but probably don't need to. Once the user is logged in, they will be redirected to `./src/components/account/Account.js`, you can plug in your account page here, configure Firebase, and call it a day.<br><br>
-<b>Firebase config (`auth_config`)</b>: [Firebase config](https://support.google.com/firebase/answer/7015592)<br>
-<b>Service account keys (`messaging_config`)</b>: [Service account keys](https://cloud.google.com/iam/docs/creating-managing-service-account-keys)
+The login page is located in `./src/components/login/Login.js`, if you care to make edits, but probably don't need to. Once the user is logged in, they will be redirected to `./src/components/account/Account.js`, you can plug in your account page here, configure Firebase, and call it a day.
 <br><br>
 
 ## 🔥 Firebase
@@ -64,6 +62,9 @@ messaging_config = {
   "client_x509_cert_url": "YOUR-DATA-FROM-FIREBASE",
 }
 ```
+<b>Firebase config (`auth_config`)</b>: [Firebase config](https://support.google.com/firebase/answer/7015592)<br>
+<b>Service account keys (`messaging_config`)</b>: [Service account keys](https://cloud.google.com/iam/docs/creating-managing-service-account-keys)<br><br>
+
 You will also need to enable [Firebase Authentication](https://firebase.google.com/docs/auth) and [Firebase Realtime Database](https://firebase.google.com/docs/database) in your project, if you haven't already, as well as [set the read/write permissions](https://firebase.google.com/docs/database/security/get-started#access_your_rules) for the realtime database. This is used to create, store, and delete usernames. 
 <br><br>
 
