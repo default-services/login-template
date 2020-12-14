@@ -31,6 +31,7 @@ The login page is located in `./src/components/login/Login.js`, if you care to m
 Firebase is authentication is configured via Python/Flask using [Pyrebase](https://github.com/thisbejim/Pyrebase). You'll need to create and add a `./resources/firebase/config.py` file which contains your Firebase configuration and should include the following snippet, though including the data from your Firebase project. The information you add to this file should not be shared, and so the file is excluded in the project's `.gitignore`, allowing the file to act as environment variables:
 
 ```python
+# Firebase config object
 auth_config = {
   "apiKey": "YOUR-DATA-FROM-FIREBASE",
   "authDomain": "YOUR-DATA-FROM-FIREBASE",
@@ -41,7 +42,6 @@ auth_config = {
   "appId": "YOUR-DATA-FROM-FIREBASE",
   "measurementId": "YOUR-DATA-FROM-FIREBASE",
 }
-
 
 # For Firebase Database
 database_config = {
@@ -62,8 +62,8 @@ messaging_config = {
   "client_x509_cert_url": "YOUR-DATA-FROM-FIREBASE",
 }
 ```
-<b>Firebase config (`auth_config`)</b>: [Firebase config](https://support.google.com/firebase/answer/7015592)<br>
-<b>Service account keys (`messaging_config`)</b>: [Service account keys](https://cloud.google.com/iam/docs/creating-managing-service-account-keys)<br><br>
+<b>`auth_config`</b>: For information on obtaining your Firebase config, see: [Firebase config](https://support.google.com/firebase/answer/7015592)<br>
+<b>`messaging_config`</b>: For information on obtaining your service account keys, see: [Service account keys](https://cloud.google.com/iam/docs/creating-managing-service-account-keys)<br><br>
 
 You will also need to enable [Firebase Authentication](https://firebase.google.com/docs/auth) and [Firebase Realtime Database](https://firebase.google.com/docs/database) in your project, if you haven't already, as well as [set the read/write permissions](https://firebase.google.com/docs/database/security/get-started#access_your_rules) for the realtime database. This is used to create, store, and delete usernames. 
 <br><br>
