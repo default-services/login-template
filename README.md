@@ -41,9 +41,31 @@ auth_config = {
   "appId": "YOUR-DATA-FROM-FIREBASE",
   "measurementId": "YOUR-DATA-FROM-FIREBASE",
 }
-```
 
+
+# For Firebase Database
+database_config = {
+  "databaseURL": "YOUR-DATA-FROM-FIREBASE",
+}
+
+# For Firebase SDK
+messaging_config = {
+  "type": "YOUR-DATA-FROM-FIREBASE",
+  "project_id": "YOUR-DATA-FROM-FIREBASE",
+  "private_key_id": "YOUR-DATA-FROM-FIREBASE",
+  "private_key": "YOUR-DATA-FROM-FIREBASE",
+  "client_email": "YOUR-DATA-FROM-FIREBASE",
+  "client_id": "YOUR-DATA-FROM-FIREBASE",
+  "auth_uri": "YOUR-DATA-FROM-FIREBASE",
+  "token_uri": "YOUR-DATA-FROM-FIREBASE",
+  "auth_provider_x509_cert_url": "YOUR-DATA-FROM-FIREBASE",
+  "client_x509_cert_url": "YOUR-DATA-FROM-FIREBASE",
+}
+```
 You will also need to enable [Firebase Authentication](https://firebase.google.com/docs/auth) and [Firebase Realtime Database](https://firebase.google.com/docs/database) in your project, if you haven't already, as well as [set the read/write permissions](https://firebase.google.com/docs/database/security/get-started#access_your_rules) for the realtime database. This is used to create, store, and delete usernames. 
+<br>
+Firebase config (`auth_config`): [Firebase config](https://support.google.com/firebase/answer/7015592)<br>
+Service account keys (`messaging_config`): [Service account keys](https://cloud.google.com/iam/docs/creating-managing-service-account-keys)
 <br><br>
 
 
