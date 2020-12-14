@@ -63,6 +63,7 @@ messaging_config = {
 }
 ```
 <b>`auth_config`</b>: For information on obtaining your Firebase config, see: [Firebase config](https://support.google.com/firebase/answer/7015592)<br>
+<b>`database_config`</b>: Your Firebase configuration from `auth_config` contains the `databaseURL`.<br>
 <b>`messaging_config`</b>: For information on obtaining your service account keys, see: [Service account keys](https://cloud.google.com/iam/docs/creating-managing-service-account-keys)<br><br>
 
 You will also need to enable [Firebase Authentication](https://firebase.google.com/docs/auth) and [Firebase Realtime Database](https://firebase.google.com/docs/database) in your project, if you haven't already, as well as [set the read/write permissions](https://firebase.google.com/docs/database/security/get-started#access_your_rules) for the realtime database. This is used to create, store, and delete usernames. 
