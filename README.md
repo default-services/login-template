@@ -69,7 +69,6 @@ messaging_config = {
 You will also need to enable [Firebase Authentication](https://firebase.google.com/docs/auth) and [Firebase Realtime Database](https://firebase.google.com/docs/database) in your project, if you haven't already, as well as [set the read/write permissions](https://firebase.google.com/docs/database/security/get-started#access_your_rules) for the realtime database. This is used to create, store, and delete usernames. 
 <br><br>
 
-
 ## ⚗️ Flask
 The Flask server is located in `./app.py`. It comes with CORS enabled, as well as all login, sign up, and password reset routes, all preconfigured. For information on using Flask, see the [Flask documentation](https://flask.palletsprojects.com/).
 <br><br>
