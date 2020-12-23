@@ -73,7 +73,7 @@ You will also need to enable [Firebase Authentication](https://firebase.google.c
 The Flask server is located in `./app.py`. It comes with CORS enabled, as well as all login, sign up, and password reset routes, all preconfigured. For information on using Flask, see the [Flask documentation](https://flask.palletsprojects.com/).
 <br><br>
 
-## 🦟 Software bugs
+## 🦟 Bugs
 Bugs reported on the project's [issues page](https://github.com/iPzard/mkvtoolnix-batch-tool/issues) will be exterminated as quickly as possible, be sure to include steps to reproduce so they can be spotted easily.
 <br><br>
 
