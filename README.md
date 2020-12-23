@@ -74,7 +74,7 @@ The Flask server is located in `./app.py`. It comes with CORS enabled, as well a
 <br><br>
 
 ## 🦟 Bugs
-Bugs reported on the project's [issues page](https://github.com/iPzard/mkvtoolnix-batch-tool/issues) will be exterminated as quickly as possible, be sure to include steps to reproduce so they can be spotted easily.
+Bugs reported on the project's [issues page](https://github.com/default-services/login-template/issues) will be exterminated as quickly as possible, be sure to include steps to reproduce so they can be spotted easily.
 <br><br>
 
 ## 🙏 Attribution
