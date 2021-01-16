@@ -36,15 +36,15 @@ const Login = () => {
     const usernameData = persistentStorage.getLocalValue('username');
 
     // Example push notification
-    setTimeout(() => {
-      sendPushNotification(
-        'daniel', // username
-        'test title!',
-        'testing message',
-        (response) => console.log(response),
-        (error) => console.error(error)
-      );
-    }, 3000);
+    // setTimeout(() => {
+    //   sendPushNotification(
+    //     'daniel', // username
+    //     'test title!',
+    //     'testing message',
+    //     (response) => console.log(response),
+    //     (error) => console.error(error)
+    //   );
+    // }, 3000);
 
     if (rememberUser) {
       if (usernameData) {

@@ -100,6 +100,15 @@ export const userLogOut = () => {
 };
 
 /**
+ * @description - Function check if the Firebase idToken has expired.
+ * @param {string} idToken - Firebase idToken which expires after 1hr.
+ * @param  {...function} args - `callback` and `errorCallback` functions.
+ */
+export const checkLoginStatus = (idToken, ...args) => {
+  parseRequest({ idToken }, 'is_logged_in', ...args);
+};
+
+/**
  * @description - Function create an account in Firebase.
  * @param {string} email - User email address to associate with account.
  * @param {string} password - User password to log into their account.

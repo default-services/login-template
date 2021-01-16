@@ -62,11 +62,25 @@ messaging_config = {
   "client_x509_cert_url": "YOUR-DATA-FROM-FIREBASE",
 }
 ```
-<b>`auth_config`</b>: For information on obtaining your Firebase config, see: [Firebase config](https://support.google.com/firebase/answer/7015592).<br>
+<b>`auth_config`</b>: For information on obtaining your Firebase config, see: [Firebase config](https://support.google.com/firebase/answer/7015592), if you're including `storageBucket` (optional), you'll need to enable [Firebase Cloud Storage](https://firebase.google.com/docs/storage).<br>
 <b>`database_config`</b>: Your Firebase configuration from `auth_config` contains the `databaseURL`.<br>
-<b>`messaging_config`</b>: For information on obtaining your service account keys, see: [Service account keys](https://cloud.google.com/iam/docs/creating-managing-service-account-keys).<br><br>
+<b>`messaging_config`</b>: For information on obtaining your service account keys, see: [Service account keys](https://cloud.google.com/iam/docs/creating-managing-service-account-keys).<br>
 
 You will also need to enable [Firebase Authentication](https://firebase.google.com/docs/auth) and [Firebase Realtime Database](https://firebase.google.com/docs/database) in your project, if you haven't already, as well as [set the read/write permissions](https://firebase.google.com/docs/database/security/get-started#access_your_rules) for the realtime database. This is used to create, store, and delete usernames. 
+<br><br>
+
+You will also need to create a `.env` file at the root of your project, with a configuration similar to the configuration below, some fields such as `REACT_APP_FIREBASE_MEASUREMENT_ID` and `REACT_APP_FIREBASE_STORAGE_BUCKET` are optional, if removing, you'll also want to update the service worker configuration in `src\serviceWorker.js`:
+
+```bash
+REACT_APP_FIREBASE_API_KEY=YOUR-DATA-FROM-FIREBASE
+REACT_APP_FIREBASE_AUTH_DOMAIN=YOUR-DATA-FROM-FIREBASE
+REACT_APP_FIREBASE_DATABASE_URL=YOUR-DATA-FROM-FIREBASE
+REACT_APP_FIREBASE_PROJECT_ID=YOUR-DATA-FROM-FIREBASE
+REACT_APP_FIREBASE_STORAGE_BUCKET=YOUR-DATA-FROM-FIREBASE
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=YOUR-DATA-FROM-FIREBASE
+REACT_APP_FIREBASE_APP_ID=YOUR-DATA-FROM-FIREBASE
+REACT_APP_FIREBASE_MEASUREMENT_ID=YOUR-DATA-FROM-FIREBASE
+```
 <br><br>
 
 ## ⚗️ Flask
