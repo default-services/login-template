@@ -67,9 +67,9 @@ messaging_config = {
 <b>`messaging_config`</b>: For information on obtaining your service account keys, see: [Service account keys](https://cloud.google.com/iam/docs/creating-managing-service-account-keys).<br>
 
 You will also need to enable [Firebase Authentication](https://firebase.google.com/docs/auth) and [Firebase Realtime Database](https://firebase.google.com/docs/database) in your project, if you haven't already, as well as [set the read/write permissions](https://firebase.google.com/docs/database/security/get-started#access_your_rules) for the realtime database. This is used to create, store, and delete usernames. 
-<br><br>
+<br>
 
-You will also need to create a `.env` file at the root of your project, with a configuration similar to the configuration below:
+You will also need to create a `.env` file at the root of your project, with a configuration similar to the configuration included below:
 
 ```bash
 REACT_APP_FIREBASE_API_KEY=YOUR-DATA-FROM-FIREBASE
