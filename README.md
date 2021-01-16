@@ -69,7 +69,7 @@ messaging_config = {
 You will also need to enable [Firebase Authentication](https://firebase.google.com/docs/auth) and [Firebase Realtime Database](https://firebase.google.com/docs/database) in your project, if you haven't already, as well as [set the read/write permissions](https://firebase.google.com/docs/database/security/get-started#access_your_rules) for the realtime database. This is used to create, store, and delete usernames. 
 <br><br>
 
-You will also need to create a `.env` file at the root of your project, with a configuration similar to the configuration below, some fields such as `REACT_APP_FIREBASE_MEASUREMENT_ID` and `REACT_APP_FIREBASE_STORAGE_BUCKET` are optional, if removing, you'll also want to update the service worker configuration in `src\serviceWorker.js`:
+You will also need to create a `.env` file at the root of your project, with a configuration similar to the configuration below:
 
 ```bash
 REACT_APP_FIREBASE_API_KEY=YOUR-DATA-FROM-FIREBASE
@@ -81,6 +81,7 @@ REACT_APP_FIREBASE_MESSAGING_SENDER_ID=YOUR-DATA-FROM-FIREBASE
 REACT_APP_FIREBASE_APP_ID=YOUR-DATA-FROM-FIREBASE
 REACT_APP_FIREBASE_MEASUREMENT_ID=YOUR-DATA-FROM-FIREBASE
 ```
+Some fields such as `REACT_APP_FIREBASE_MEASUREMENT_ID` and `REACT_APP_FIREBASE_STORAGE_BUCKET` are optional, if removing, you'll also want to update the service worker configuration in `src\serviceWorker.js`.
 <br><br>
 
 ## ⚗️ Flask
