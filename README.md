@@ -1,7 +1,7 @@
 # Default Login Template
 
 [![Build](https://img.shields.io/badge/build-passing-%2357a9a9?style=for-the-badge)](https://github.com/default-services/icons)
-[![License](https://img.shields.io/github/license/default-services/login-template?color=%2357a9a9&style=for-the-badge)](https://github.com/default-services/icons/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/default-services/login-template?color=%2357a9a9&style=for-the-badge)](https://github.com/default-services/login-template/blob/master/LICENSE)
 
 > Default login page template, fully connected and functional login page built using the Default Component library, and equipped with a Python/Flask back-end which is connected to Firebase.
 > <br><br>
